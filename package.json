@@ -12,6 +12,7 @@
     "lib"
   ],
   "devDependencies": {
+    "@types/node": "^12.12.30",
     "jest": "^25.1.0",
     "power-assert": "^1.6.1",
     "typescript": "^3.8.3"
