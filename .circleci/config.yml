@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@lts
+  node: circleci/node@12-buster
 jobs:
   build-and-test:
     executor:
