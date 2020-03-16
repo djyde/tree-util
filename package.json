@@ -1,0 +1,19 @@
+{
+  "name": "@djyde/tree-util",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "test": "jest",
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "power-assert": "^1.6.1",
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "module": "commonjs",
+    "strictNullChecks": true,
+    "target": "es5"
+  }
+}
