@@ -2,6 +2,8 @@
 
 A library for working with n-ary tree.
 
+[![Build Status](https://travis-ci.org/djyde/tree-util.svg?branch=master)](https://travis-ci.org/djyde/tree-util)
+
 ## Install
 
 ```bash
