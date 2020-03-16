@@ -1,3 +1,5 @@
+import { findIndex } from './utils'
+
 export interface TreeNodeBase {
   id: string
 }
@@ -82,7 +84,8 @@ class TreeNode<T extends TreeNodeBase> {
 
     while(queue.length) {
       const n = queue.shift() as TreeNode<T>
-      const index = n.children.findIndex(_ => _.data.id === id)
+
+      const index =  findIndex(n.children, _ => _.data.id === id)
       if (index !== -1) {
         n.children.splice(index, 0, node)
       } else {
@@ -96,7 +99,7 @@ class TreeNode<T extends TreeNodeBase> {
 
     while(queue.length) {
       const n = queue.shift() as TreeNode<T>
-      const index = n.children.findIndex(_ => _.data.id === id)
+      const index = findIndex(n.children, _ => _.data.id === id)
       if (index !== -1) {
         n.children.splice(index + 1, 0, node)
       } else {
@@ -109,7 +112,7 @@ class TreeNode<T extends TreeNodeBase> {
     let queue = [this as TreeNode<T>]
     while(queue.length) {
       const n = queue.shift() as TreeNode<T>
-      const index = n.children.findIndex(_ => { console.log(_.data.id, id); return _.data.id === id })
+      const index = findIndex(n.children, _ => _.data.id === id)
       if (index !== -1) {
         return n.children.splice(index, 1)[0]
       } else {
