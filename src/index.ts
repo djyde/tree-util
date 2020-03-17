@@ -10,6 +10,14 @@ class TreeNode<T extends TreeNodeBase> {
 
   }
 
+  // copy a tree
+  static copy<T extends TreeNodeBase>(node: TreeNode<T>) {
+    function c (n: TreeNode<T>) {
+      return new TreeNode(n.data, n.children.map(_ => c(_)))
+    }
+    return c(node)
+  }
+
   appendChild(node: TreeNode<T>) {
     this.children.push(node)
   }

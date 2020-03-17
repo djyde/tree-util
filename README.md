@@ -41,6 +41,9 @@ declare class TreeNode<T extends TreeNodeBase> {
 
     constructor(data: T, children?: TreeNode<T>[]);
 
+    // copy a new tree from an exist tree
+    static copy<T extends TreeNodeBase>(node: TreeNode<T>): any;
+
     appendChild(node: TreeNode<T>): void;
 
     prependChild(node: TreeNode<T>): void;

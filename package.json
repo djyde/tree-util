@@ -1,11 +1,12 @@
 {
   "name": "@djyde/tree-util",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "scripts": {
     "start": "tsc --watch",
     "test": "jest",
-    "build": "tsc",
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf lib",
     "prepublish": "npm run build"
   },
   "files": [
