@@ -11,8 +11,8 @@ class TreeNode<T extends TreeNodeBase> {
   }
 
   // copy a tree
-  static copy<T extends TreeNodeBase>(node: TreeNode<T>) {
-    return new TreeNode(node.data, node.children.map(_ => TreeNode.copy(_)))
+  static copy<T extends TreeNodeBase>(node: TreeNode<T>): TreeNode<T> {
+    return new TreeNode<T>(node.data, node.children.map(_ => TreeNode.copy<T>(_)))
   }
 
   appendChild(node: TreeNode<T>) {
