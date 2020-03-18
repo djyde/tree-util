@@ -1,6 +1,6 @@
 {
   "name": "@djyde/tree-util",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "lib/index.js",
   "scripts": {
     "start": "tsc --watch",
