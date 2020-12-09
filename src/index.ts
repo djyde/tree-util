@@ -15,6 +15,12 @@ class TreeNode<T extends TreeNodeBase> {
     return new TreeNode<T>(node.data, node.children.map(_ => TreeNode.copy<T>(_)))
   }
 
+  // convert a TreeNode like json string to TreeNode
+  static fromJson<T extends TreeNodeBase>(jsonString: string): TreeNode<T> {
+    const parsed = JSON.parse(jsonString) as TreeNode<T>
+    return TreeNode.copy(parsed)
+  }
+
   appendChild(node: TreeNode<T>) {
     this.children.push(node)
   }
