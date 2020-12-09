@@ -44,6 +44,9 @@ declare class TreeNode<T extends TreeNodeBase> {
     // copy a new tree from an exist tree
     static copy<T extends TreeNodeBase>(node: TreeNode<T>): any;
 
+    // convert a TreeNode like json string to TreeNode
+    static fromJson<T extends TreeNodeBase>(jsonString: string): TreeNode<T>
+
     appendChild(node: TreeNode<T>): void;
 
     prependChild(node: TreeNode<T>): void;
