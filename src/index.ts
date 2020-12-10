@@ -11,8 +11,8 @@ class TreeNode<T extends TreeNodeBase> {
   }
 
   // copy a tree
-  static copy<T extends TreeNodeBase>(node: TreeNode<T>): TreeNode<T> {
-    return new TreeNode<T>(node.data, node.children.map(_ => TreeNode.copy<T>(_)))
+  static copy<T extends TreeNodeBase>(node: TreeNode<T>, replacer?: (data: T) => T): TreeNode<T> {
+    return new TreeNode<T>(replacer ? replacer(node.data) : node.data, node.children.map(_ => TreeNode.copy<T>(_, replacer)))
   }
 
   // convert a TreeNode like json string to TreeNode

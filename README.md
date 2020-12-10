@@ -42,7 +42,7 @@ declare class TreeNode<T extends TreeNodeBase> {
     constructor(data: T, children?: TreeNode<T>[]);
 
     // copy a new tree from an exist tree
-    static copy<T extends TreeNodeBase>(node: TreeNode<T>): any;
+    static copy<T extends TreeNodeBase>(node: TreeNode<T>, replacer?: (data: T) => T): TreeNode<T>
 
     // convert a TreeNode like json string to TreeNode
     static fromJson<T extends TreeNodeBase>(jsonString: string): TreeNode<T>

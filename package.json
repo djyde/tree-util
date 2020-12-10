@@ -4,10 +4,10 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "tsc --watch",
-    "test": "jest",
+    "test": "npm run build && jest",
     "build": "npm run clean && tsc",
     "clean": "rm -rf lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm test"
   },
   "files": [
     "lib"
