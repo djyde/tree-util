@@ -29,6 +29,24 @@ class TreeNode<T extends TreeNodeBase> {
     this.children.unshift(node)
   }
 
+  findParent(id: string) {
+    if (this.data.id === id) {
+      return null
+    }
+
+    if (findIndex(this.children, (n => n.data.id === id)) !== -1) {
+      return this
+    } else {
+      for (let i = 0; i < this.children.length; i++) {
+        if (this.children[i].findParent(id)) {
+          return this.children[i]
+        }
+      }
+
+      return null;
+    }
+  }
+
   bfs(id: string, cb: (n: TreeNode<T>) => void) {
     if (this.data.id === id) {
       cb(this)

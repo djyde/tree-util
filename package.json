@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "tsc --watch",
-    "test": "npm run build && jest",
+    "test": "npm run build && jest --collect-coverage",
     "build": "npm run clean && tsc",
     "clean": "rm -rf lib",
     "prepublish": "npm test"
